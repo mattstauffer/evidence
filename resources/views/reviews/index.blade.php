@@ -8,7 +8,7 @@
 
             <ul>
                 @foreach($reviews as $review)
-                <li><pre>{{ json_encode($review) }}</pre></li>
+                <li><pre>{{ json_encode($review, JSON_PRETTY_PRINT) }}</pre></li>
                 @endforeach
             </ul>
         </div>

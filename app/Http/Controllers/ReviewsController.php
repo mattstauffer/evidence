@@ -3,18 +3,21 @@
 namespace App\Http\Controllers;
 
 use App\Review;
+use App\Reviewee;
 use Illuminate\Http\Request;
 
 class ReviewsController extends Controller
 {
     public function index()
     {
-        return Review::all();
+        return view('reviews.index')
+            ->with('reviews', Review::all());
     }
 
     public function create()
     {
-        return view('reviews.create');
+        return view('reviews.create')
+            ->with('reviewees', Reviewee::all());
     }
 
     public function store(Request $request)
@@ -24,9 +27,12 @@ class ReviewsController extends Controller
             'author' => '',
             'text' => '',
             'type' => 'required',
+            'reviewee' => 'required' // exists in
         ]);
 
-        Review::create($request->only([
+        $reviewee = Reviewee::findOrFail($request->input('reviewee'));
+
+        $reviewee->reviews()->create($request->only([
             'link',
             'author',
             'text',

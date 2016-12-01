@@ -10,6 +10,13 @@
 
             <form action="/reviews" method="POST">
                 {{ csrf_field() }}
+                <label for="reviewee">Thing being reviewed</label>
+                <select name="reviewee">
+                    @foreach ($reviewees as $reviewee)
+                    <option value="{{ $reviewee->id }}">{{ $reviewee->name }}</option>
+                    @endforeach
+                </select><br><br>
+
                 <label for="title">Title</label>
                 <input type="text" name="title"><br><br>
 

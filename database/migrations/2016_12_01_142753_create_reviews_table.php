@@ -16,6 +16,7 @@ class CreateReviewsTable extends Migration
             $table->string('type');
             $table->string('source')->nullable();
             $table->string('title')->nullable();
+            $table->integer('reviewee_id')->unsigned();
             $table->timestamps();
         });
     }

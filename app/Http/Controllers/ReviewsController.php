@@ -35,6 +35,7 @@ class ReviewsController extends Controller
         $reviewee->reviews()->create($request->only([
             'link',
             'author',
+            'title',
             'text',
             'type'
         ]));

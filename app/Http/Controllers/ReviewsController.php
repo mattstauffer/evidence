@@ -26,6 +26,7 @@ class ReviewsController extends Controller
             'link' => '',
             'author' => '',
             'text' => '',
+            'title' => '',
             'type' => 'required',
             'reviewee' => 'required' // exists in
         ]);

@@ -28,6 +28,7 @@ class ReviewsController extends Controller
             'text' => '',
             'title' => '',
             'type' => 'required',
+            'source' => '',
             'reviewee' => 'required' // exists in
         ]);
 
@@ -38,7 +39,8 @@ class ReviewsController extends Controller
             'author',
             'title',
             'text',
-            'type'
+            'type',
+            'source'
         ]));
 
         return redirect('/reviews/');

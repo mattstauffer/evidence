@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Review extends Model
 {
     protected $fillable = [
-        'link', 'author', 'text', 'type', 'title'
+        'link', 'author', 'text', 'type', 'title', 'source'
     ];
 
     public function reviewee()
